@@ -4,12 +4,16 @@ import styles from './Task.module.css'
 
 export function Task() {
   return (
-    <div className={styles.task}>
+    <div className={styles.taskToDo}>
       <input id="task" type="checkbox" />   
 
-      <label htmlFor="task"> Fazer 50 muscle ups</label>
+      <label htmlFor="task">
+        Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.
+      </label>
 
-      <Trash />
+      <button title='Delete task'>
+        <Trash size={18}/>
+      </button>
     </div>
   );
 }

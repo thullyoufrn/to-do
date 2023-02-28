@@ -20,6 +20,10 @@ export function App() {
           <Infos /> 
 
           <Task />
+          <Task />
+          <Task />
+          <Task />
+          <Task />
         </section>
       </main>
     </div>
