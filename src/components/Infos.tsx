@@ -10,7 +10,7 @@ export function Infos() {
 
         <div className={styles.doneTasks}>
           Done
-          <div className={styles.counter}>0</div>
+          <div className={styles.counter}>0 de 0</div>
         </div>
     </div>
   );
