@@ -6,7 +6,7 @@
   margin-top: 1.5rem;
 
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 0.75rem;  
 }
@@ -15,15 +15,20 @@
   margin-top: 0.75rem;
 }
 
+.taskToDo > div {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
 .taskToDo input {
   appearance: none;
-  width: 1.125rem;
-  height: 1.125rem;
-  border-radius: 50%;
+  min-width: 1.125rem;
+  min-height: 1.125rem;
+  border-radius: 100%;
   border: 2px solid var(--blue);
   background-color: transparent;
   cursor: pointer;
-  margin-top: 3px;
 
   display: flex;
   align-items: center;
@@ -73,7 +78,7 @@
   cursor: pointer;
 }
 
-.taskToDo input:checked + .taskName {
+.taskToDo input:checked + .taskTitle {
   color: var(--gray-300);
   text-decoration: line-through;
 
@@ -88,6 +93,8 @@
   border-radius: 4px;
   width: 1.5rem;
   height: 1.5rem;
+
+  align-self: flex-start;
 }
 
 .taskToDo button:hover {

@@ -1,19 +1,26 @@
 import { Trash } from 'phosphor-react';
 
-import check from '../assets/checkbox done.svg'
-
 import styles from './Task.module.css'
 
-export function Task() {
+interface TaskProps {
+  id: number;
+  taskTitle: string;
+  isComplete: boolean;
+}
+
+// Prop "id" is useful to make input and label unique
+export function Task({ id, taskTitle, isComplete }: TaskProps) {
+  console.log(id)
+
   return (
     <div className={styles.taskToDo}>
-      {/* Turn the id unique */}
-      <input id="task" type="checkbox" />
+      <div>
+        <input id={""+id+""} type="checkbox" />
 
-      {/* Turn the htmlFor unique */}
-      <label className={styles.taskName} htmlFor="task">
-        Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.
-      </label>
+        <label className={styles.taskTitle} htmlFor={""+id+""}>
+          {taskTitle}
+        </label>  
+      </div>
 
       <button title='Delete task'>
         <Trash size={18}/>
