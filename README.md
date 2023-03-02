@@ -18,3 +18,11 @@
     taskTitle: "Study how to create a SPA with React",
     isComplete: false,
   }
+
+  # Funcionalities
+
+  - Add task
+  - Delete task
+  - Complete task
+  - Count created tasks
+  - Count done tasks

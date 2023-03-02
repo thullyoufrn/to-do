@@ -10,8 +10,6 @@ interface TaskProps {
 
 // Prop "id" is useful to make input and label unique
 export function Task({ id, taskTitle, isComplete }: TaskProps) {
-  console.log(id)
-
   return (
     <div className={styles.taskToDo}>
       <div>

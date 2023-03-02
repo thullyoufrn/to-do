@@ -6,7 +6,7 @@
   gap: 0.5rem;
 }
 
-.input {
+.newTask textarea {
   width: 39.875rem;
   height: 3.375rem;
   padding: 1rem;
@@ -18,7 +18,7 @@
   flex-grow: 1;
 }
 
-.button {
+.newTask button {
   width: 5.625rem;
   height: 3.25rem;
   border-radius: 8px;
@@ -36,7 +36,7 @@
   align-items: center;
 }
 
-.button:hover {
+.newTask button:hover {
   background-color: var(--blue);
   cursor: pointer;
   transition: 0.2s;
