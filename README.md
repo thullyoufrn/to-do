@@ -19,7 +19,7 @@
     isComplete: false,
   }
 
-  # Funcionalities
+  # Functionalities
 
   - Add task
   - Delete task
