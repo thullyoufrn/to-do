@@ -8,9 +8,8 @@ interface TaskProps {
   id: number;
   taskTitle: string;
   isComplete: boolean;
-  onDeleteTask: Function;
-  onChangeTaskSituation: Function;
-  tasks: object;
+  onDeleteTask: (arg: number) => object | void;
+  onChangeTaskSituation: (arg: number) => object | void;
 }
 
 // Prop "id" is useful to make input and label unique

@@ -1,24 +1,25 @@
 import { PlusCircle } from 'phosphor-react';
 import styles from './NewTask.module.css'
+import { ChangeEvent, FormEvent } from 'react';
 
 // Is this interface right?
 interface NewTaskProps {
-  onCreateNewTask: Function;
+  handleCreateNewTask: (event: FormEvent) => object | void;
   newTaskTitle: string;
-  onNewTaskChange: Function;
+  handleNewTaskChange: (event: ChangeEvent<HTMLTextAreaElement>) => object | void;
 }
 
-export function NewTask({ onCreateNewTask, newTaskTitle, onNewTaskChange }: NewTaskProps) {
+export function NewTask({ handleCreateNewTask, newTaskTitle, handleNewTaskChange }: NewTaskProps) {
   const isNewTaskEmpty = newTaskTitle.length === 0;
 
   return (
     <section>
-      <form onSubmit={onCreateNewTask} className={styles.newTask}>
+      <form onSubmit={handleCreateNewTask} className={styles.newTask}>
         {/* Maybe add auto height adjust later */}
         <textarea 
           placeholder='Add a new task'
           value={newTaskTitle}
-          onChange={onNewTaskChange}
+          onChange={handleNewTaskChange}
           required
         />
 

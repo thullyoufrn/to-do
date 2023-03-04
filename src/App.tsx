@@ -101,9 +101,9 @@ export function App() {
 
       <main className={styles.wrapper}>
         <NewTask 
-          onNewTaskChange={handleNewTaskChange}
+          handleNewTaskChange={handleNewTaskChange}
           newTaskTitle={newTaskTitle}
-          onCreateNewTask={handleCreateNewTask}
+          handleCreateNewTask={handleCreateNewTask}
         />
         
         <section>
@@ -122,7 +122,6 @@ export function App() {
                   isComplete={task.isComplete}
                   onDeleteTask={deleteTask}
                   onChangeTaskSituation={changeTaskSituation}
-                  tasks={tasks}
                 />
               ) 
             }) 
