@@ -33,8 +33,8 @@ const initialTasks: taskStructure[] = [
   },
   {
     id: 4,
-    taskTitle: "Study how to create a SPA with React",
-    isComplete: false,
+    taskTitle: "Study how to create a Single Page Application with React",
+    isComplete: true,
   }
 ];
 
@@ -42,6 +42,10 @@ export function App() {
   const [tasks, setTasks] = useState<taskStructure[]>(initialTasks)
 
   const [newTaskTitle, setNewTaskTitle] = useState<string>('')
+
+  function handleNewTaskChange(event: ChangeEvent<HTMLTextAreaElement>) {
+    setNewTaskTitle(event.target.value)
+  }
 
   function handleCreateNewTask(event: FormEvent) {
     event.preventDefault();
@@ -62,10 +66,32 @@ export function App() {
     setTasks([...tasks, newTask])
     setNewTaskTitle('');
   }
-  
-  function handleNewTaskChange(event: ChangeEvent<HTMLTextAreaElement>) {
-    setNewTaskTitle(event.target.value)
+
+  function deleteTask(taskToDeleteId: number) {
+    const tasksWithoutDeletedOne = tasks.filter(task => {
+      return task.id !== taskToDeleteId
+    })
+
+    setTasks(tasksWithoutDeletedOne);
   }
+
+  function changeTaskSituation(taskToChangeSituation: number) {
+    const tasksWithNewSituations = tasks.map(task => {
+      if(task.id === taskToChangeSituation) {
+        task.isComplete = !task.isComplete
+      }
+
+      return task
+    })
+
+    setTasks(tasksWithNewSituations);
+  }
+
+  const createdTasks = tasks.length
+
+  const doneTasks = tasks.reduce((acc, task) => {
+    return task.isComplete === true ? acc + 1 : acc
+  }, 0)
   
   const hasTask = tasks.length !== 0;
 
@@ -81,7 +107,10 @@ export function App() {
         />
         
         <section>
-          <Infos />     
+          <Infos 
+            createdTasks={createdTasks}
+            doneTasks={doneTasks}
+          />     
 
           {hasTask ? 
             tasks.map(task => {
@@ -91,6 +120,9 @@ export function App() {
                   id={task.id}
                   taskTitle={task.taskTitle}
                   isComplete={task.isComplete}
+                  onDeleteTask={deleteTask}
+                  onChangeTaskSituation={changeTaskSituation}
+                  tasks={tasks}
                 />
               ) 
             }) 
