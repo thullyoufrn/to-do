@@ -15,7 +15,7 @@ export function Infos({ createdTasks, doneTasks }:InfosProps) {
 
         <div className={styles.doneTasks}>
           Done
-          <div className={styles.counter}>{doneTasks} de {createdTasks}</div>
+          <div className={styles.counter}>{doneTasks} out of {createdTasks}</div>
         </div>
     </div>
   );
