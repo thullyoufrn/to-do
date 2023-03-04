@@ -9,3 +9,4 @@
 # Reminders
 
 - [ ] Completed task css must have no border
+- [ ] Add responsiveness

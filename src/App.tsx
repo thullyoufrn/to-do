@@ -99,7 +99,7 @@ export function App() {
     <div>
       <Header />
 
-      <main className={styles.main}>
+      <main className={styles.wrapper}>
         <NewTask 
           onNewTaskChange={handleNewTaskChange}
           newTaskTitle={newTaskTitle}
