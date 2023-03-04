@@ -4,8 +4,8 @@ This challenge was built during my React studies in the Rocketseat's Ignite boot
 
 ## Overview
 
-## Application
-Check now the application: ![To-Do-List]("https://nimble-monstera-189942.netlify.app/").
+### App
+Check it out now and test the app: [To Do List](https://nimble-monstera-189942.netlify.app/).
 
 ### Screenshot
 
