@@ -15,7 +15,18 @@ interface taskStructure {
   isComplete: boolean;
 }
 
-const initialTasks: taskStructure[] = []
+const initialTasks: taskStructure[] = [
+  {
+    id: 1,
+    taskTitle: "Estudar TypeScript",
+    isComplete: false,
+  },
+  {
+    id: 2,
+    taskTitle: "Estudar JavaScript",
+    isComplete: true,
+  },
+]
 
 export function App() {
   const [tasks, setTasks] = useState<taskStructure[]>(initialTasks)
